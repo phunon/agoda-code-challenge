@@ -3,7 +3,7 @@ using nodejs
 ## Path
 
 ### GET
-#### /index
+#### path : /
 
 ### POST
 #### path: /encrypt

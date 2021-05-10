@@ -49,6 +49,8 @@ app.post('/decrypt', bodyParser.json(), (req, res) => {
     payload.forEach((item) => {
       // check correct payload
       if (item.encrypted) {
+
+        // decrypt
         const text = CryptoJS.AES.decrypt(item.encrypted, key).toString(
           CryptoJS.enc.Utf8
         );

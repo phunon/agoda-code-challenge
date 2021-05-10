@@ -1,5 +1,8 @@
 # Agoda Coding Challenge
+<<<<<<< HEAD
 using nodejs
+=======
+>>>>>>> 1414bf28ae74973136806026dad8747f6cff4eab
 ## Path
 
 ### GET

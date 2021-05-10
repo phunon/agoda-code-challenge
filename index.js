@@ -19,8 +19,11 @@ app.get('/', (req, res) => {
 // Encrypt route
 app.post('/encrypt', bodyParser.json(), (req, res) => {
   try {
+    // Get payload
     const payload = req.body.data;
     let result = [];
+
+    // Process
     payload.forEach((item) => {
       // check correct payload
       if (item.text) {
@@ -31,8 +34,9 @@ app.post('/encrypt', bodyParser.json(), (req, res) => {
         result.push({ encrypted: 'not found!' });
       }
     });
-
     encrypt = { data: result };
+
+    // Reply
     res.status(200);
     res.json(encrypt);
   } catch (e) {
@@ -44,8 +48,11 @@ app.post('/encrypt', bodyParser.json(), (req, res) => {
 // Decrypt route
 app.post('/decrypt', bodyParser.json(), (req, res) => {
   try {
+    // Get payload
     const payload = req.body.data;
     let result = [];
+
+    // Process
     payload.forEach((item) => {
       // check correct payload
       if (item.encrypted) {
@@ -54,15 +61,14 @@ app.post('/decrypt', bodyParser.json(), (req, res) => {
         const text = CryptoJS.AES.decrypt(item.encrypted, key).toString(
           CryptoJS.enc.Utf8
         );
-        result.push({
-          text,
-        });
+        result.push({ text });
       } else {
         result.push({ text: 'not found!' });
       }
     });
-
     decrypt = { data: result };
+
+    // Reply
     res.status(200);
     res.json(decrypt);
   } catch (e) {

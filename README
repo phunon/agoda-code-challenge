@@ -1,0 +1,12 @@
+### Path
+#### Encrypt
+##### request: POST
+##### payload: { data: [ { text: string }] }
+##### response: { data: [ { encrypted: string }] }
+#### Decrypt
+##### request: POST
+##### payload: { data: [ { encrypted: string }] }
+##### response: { data: [ { text: string }] }
+
+### Script
+#### run: node index.js
